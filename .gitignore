@@ -47,9 +47,6 @@ backend/uploads/**
 .DS_Store
 Thumbs.db
 
-# Cursor (optional — remove next line if you want to commit .cursor rules)
-.cursor/
-.cursor-cache/
 
 # Logs
 *.log
