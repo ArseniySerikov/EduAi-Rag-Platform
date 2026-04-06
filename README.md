@@ -177,6 +177,24 @@ alembic upgrade head
 uvicorn app.main:app --reload --port 8000
 ```
 
+## Core Backend Functions
+
+- **`register()`**  
+  Creates a new user, hashes the password, and returns a JWT containing the user payload.
+
+- **`login()`**  
+  Validates user credentials and returns a JWT for authenticated requests.
+
+- **`send_message()`**  
+  Stores the user's message, runs the RAG + LLM pipeline, and saves the assistant's response.
+
+- **`ingest_document()`**  
+  Extracts text from an uploaded document, splits it into chunks, generates embeddings, and stores them in the vector database.
+
+- **`parse_website()`**  
+  Fetches text content from a website and indexes it in the RAG system as a document.
+
+
 #### Frontend
 ```bash
 cd frontend
@@ -214,20 +232,3 @@ UPDATE users SET role = 'admin' WHERE email = 'admin@example.com';
 ```
 
 After role update, log in again to refresh frontend role state.
-
-## Core Backend Functions
-
-- **`register()`**  
-  Creates a new user, hashes the password, and returns a JWT containing the user payload.
-
-- **`login()`**  
-  Validates user credentials and returns a JWT for authenticated requests.
-
-- **`send_message()`**  
-  Stores the user's message, runs the RAG + LLM pipeline, and saves the assistant's response.
-
-- **`ingest_document()`**  
-  Extracts text from an uploaded document, splits it into chunks, generates embeddings, and stores them in the vector database.
-
-- **`parse_website()`**  
-  Fetches text content from a website and indexes it in the RAG system as a document.
