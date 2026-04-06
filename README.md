@@ -35,14 +35,8 @@ Capture:
 - Hero section
 - Feature cards
 - Footer
-
-Placeholder:
-```md
 ![Landing](photos/01-landing.png)
-```
-```md
-![Landing](photos/01-landing2.png)
-```
+![Landing 2](photos/01-landing2.png)
 ### 2) Login Page
 Capture:
 - Full login form
@@ -50,77 +44,42 @@ Capture:
 - Submit button
 - Link to registration
 - One validation/error state (optional second screenshot)
-
-Placeholder:
-```md
 ![Login](photos/login.png)
-```
-
 ### 3) Register Page
 Capture:
 - Full registration form
 - All required fields
 - Submit action
-
-Placeholder:
-```md
 ![Register](photos/registration.png)
-```
-
 ### 4) Chat Page (Student)
 Capture:
 - Left sidebar with chat list
 - Main chat area with messages
 - Message input and voice button
 - News panel on the right
-
-Placeholder:
-```md
 ![Chat Student](photos/chat.png)
-```
-
 ### 5) Chat Page (Admin State)
 Capture:
 - Admin badge/role in sidebar
 - Admin dashboard button in chat sidebar
-
-Placeholder:
-```md
 ![Chat Admin](photos/chat_admin.png)
-```
-
 ### 6) Admin Page — Stats Tab
 Capture:
 - Stats cards
 - Left admin navigation
-
-Placeholder:
-```md
 ![Admin Stats](photos/statistics.png)
-```
-
 ### 7) Admin Page — Users Tab
 Capture:
 - Users table
 - Role/status badges
 - Action buttons (block/unblock/delete)
-
-Placeholder:
-```md
 ![Admin Users](photos/users.png)
-```
-
 ### 8) Admin Page — Documents Tab
 Capture:
 - Upload button
 - Documents list/table
 - Delete action
-
-Placeholder:
-```md
 ![Admin Documents](photos/knowledge_base.png)
-```
-
 ### 9) Admin Page — Websites Tab
 Capture:
 - Add website form
@@ -128,32 +87,18 @@ Capture:
 - Parse button
 - Parse-all and clear-rag buttons
 - Status and last parsed fields
-
-Placeholder:
-```md
 ![Admin Websites](photos/websites.png)
-```
-
 ### 10) Admin Page — News Tab
 Capture:
 - Create news form
 - Publish/draft controls
 - List of news items
-
-Placeholder:
-```md
 ![Admin News](photos/news.png)
-```
-
 ### 11) Swagger Page
 Capture:
 - `/docs` root view
 - At least one auth endpoint and one websites endpoint expanded
-
-Placeholder:
-```md
 ![Swagger](photos/swagger.png)
-```
 
 ### Screenshot Quality Checklist
 - Use one browser and one theme consistently
