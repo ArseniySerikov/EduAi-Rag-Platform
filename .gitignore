@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/.venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.kdbx
+
+# Uploads & local data
+backend/uploads/
+backend/uploads/**
+*.sqlite3
+*.db
+*.sqlite
+*.bak
+*.tmp
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Cursor (optional — remove next line if you want to commit .cursor rules)
+.cursor/
+.cursor-cache/
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+coverage/
+test/
+tests/data/
+backend/test/
+backend/tests/

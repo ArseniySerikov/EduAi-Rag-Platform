@@ -1,0 +1,51 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: student_ai_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "55433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    # Loads OPENAI_API_KEY, SECRET_KEY, etc. from backend/.env (not auto-read by Compose otherwise).
+    env_file:
+      - ./backend/.env
+    environment:
+      # Must override backend/.env localhost URL when running in Compose
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/student_ai_db
+      # SECRET_KEY / OPENAI_API_KEY: from backend/.env via env_file (do not set empty here)
+      FRONTEND_URL: http://localhost
+      CORS_ORIGINS: http://localhost,http://127.0.0.1,http://localhost:80,http://127.0.0.1:80
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - backend_uploads:/app/uploads
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  backend_uploads:
